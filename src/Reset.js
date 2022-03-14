@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ThemedButton from "./components/button/ThemedButton";
 import { auth, sendPasswordReset } from "./firebase";
-import "./Reset.css";
 
 function Reset() {
   const [email, setEmail] = useState("");
@@ -17,11 +16,11 @@ function Reset() {
   }, [user, loading]);
 
   return (
-    <div className="reset">
+    <div className="auth">
       <div className="auth__container">
         <input
           type="text"
-          className="reset__textBox"
+          className="auth__textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"

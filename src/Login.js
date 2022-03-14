@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import "./Login.css";
 import ThemedButton from "./components/button/ThemedButton";
 
 function Login() {
@@ -20,18 +19,18 @@ function Login() {
   }, [user, loading, navigate]);
 
   return (
-    <div className="login">
+    <div className="auth">
       <div className="auth__container">
         <input
           type="text"
-          className="login__textBox"
+          className="auth__textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
         <input
           type="password"
-          className="login__textBox"
+          className="auth__textBox"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
