@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import ThemedButton from "./components/button/ThemedButton";
 import { auth, sendPasswordReset } from "./firebase";
 import "./Reset.css";
 
@@ -25,10 +26,11 @@ function Reset() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
-        <button className="reset__btn" onClick={() => sendPasswordReset(email)}>
-          Send password reset email
-        </button>
-
+        <ThemedButton
+          colorTheme={"primary"}
+          handleClick={() => sendPasswordReset(email)}
+          message={"Send password reset email"}
+        />
         <div>
           Don't have an account? <Link to="/register">Register</Link> now.
         </div>

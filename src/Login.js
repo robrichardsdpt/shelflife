@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Login.css";
+import ThemedButton from "./components/button/ThemedButton";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -35,15 +36,16 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button
-          className="login__btn"
-          onClick={() => logInWithEmailAndPassword(email, password)}
-        >
-          Login
-        </button>
-        <button className="login__btn login__google" onClick={signInWithGoogle}>
-          Login with Google
-        </button>
+        <ThemedButton
+          message={"Login"}
+          colorTheme={"login"}
+          handleClick={() => logInWithEmailAndPassword(email, password)}
+        />
+        <ThemedButton
+          message={"Login with Google"}
+          colorTheme={"secondary"}
+          handleClick={signInWithGoogle}
+        />
         <div>
           <Link to="/reset">Forgot Password</Link>
         </div>

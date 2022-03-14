@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import ThemedButton from "./components/button/ThemedButton";
 import {
   auth,
   registerWithEmailAndPassword,
@@ -49,16 +50,16 @@ function Register() {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button className="register__btn" onClick={register}>
-          Register
-        </button>
-        <button
-          className="register__btn register__google"
-          onClick={signInWithGoogle}
-        >
-          Register with Google
-        </button>
-
+        <ThemedButton
+          colorTheme={"primary"}
+          handleClick={register}
+          message={"Register"}
+        />
+        <ThemedButton
+          colorTheme={"secondary"}
+          message={"Register with Google"}
+          handleClick={signInWithGoogle}
+        />
         <div>
           Already have an account? <Link to="/">Login</Link> now.
         </div>

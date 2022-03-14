@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import { auth, db, logout } from "./firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
+import ThemedButton from "./components/button/ThemedButton";
 
 function Dashboard() {
   const [user, loading, error] = useAuthState(auth);
@@ -36,9 +37,11 @@ function Dashboard() {
         Logged in as
         <div>{name}</div>
         <div>{user?.email}</div>
-        <button className="dashboard__btn" onClick={logout}>
-          Logout
-        </button>
+        <ThemedButton
+          colorTheme={"primary"}
+          handleClick={logout}
+          message={"Logout"}
+        />
       </div>
     </div>
   );
