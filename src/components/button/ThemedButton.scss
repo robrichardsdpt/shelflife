@@ -10,9 +10,14 @@
   background-color: green;
 
   &:hover {
+    background-color: seagreen;
     cursor: pointer;
   }
 }
 .secondary__btn {
   background-color: #4285f4;
+  &:hover {
+    background-color: steelblue;
+    cursor: pointer;
+  }
 }
