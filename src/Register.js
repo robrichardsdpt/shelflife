@@ -28,7 +28,7 @@ function Register() {
 
   return (
     <div className="register">
-      <div className="register__container">
+      <div className="auth__container">
         <input
           type="text"
           className="register__textBox"

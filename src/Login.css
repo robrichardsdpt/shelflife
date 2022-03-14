@@ -6,13 +6,6 @@
 
   justify-content: center;
 }
-.login__container {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: #cccccc;
-  padding: 30px;
-}
 .login__textBox {
   padding: 10px;
   font-size: 18px;

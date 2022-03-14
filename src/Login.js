@@ -21,7 +21,7 @@ function Login() {
 
   return (
     <div className="login">
-      <div className="login__container">
+      <div className="auth__container">
         <input
           type="text"
           className="login__textBox"
