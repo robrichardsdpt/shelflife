@@ -1,3 +1,5 @@
+@import "./styles/auth.scss";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,33 +12,6 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.auth {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-
-  justify-content: center;
-
-  div {
-    margin-top: 7px;
-  }
-}
-
-.auth__container {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: #cccccc;
-  padding: 30px;
-}
-
-.auth__textBox {
-  padding: 10px;
-  font-size: 18px;
-  margin-bottom: 10px;
 }
 
 a {
