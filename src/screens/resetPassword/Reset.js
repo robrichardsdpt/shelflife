@@ -18,6 +18,7 @@ function Reset() {
   return (
     <div className="auth">
       <div className="auth__container">
+        <h1>📚shelfLife</h1>
         <h2 className="auth__header">Reset your password:</h2>
         <input
           type="text"
