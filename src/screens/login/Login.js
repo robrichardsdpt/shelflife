@@ -25,6 +25,7 @@ function Login() {
   return (
     <div className="auth">
       <div className="auth__container">
+        <h2 className="auth__header">Login as existing user:</h2>
         <input
           type="text"
           className="auth__textBox"
