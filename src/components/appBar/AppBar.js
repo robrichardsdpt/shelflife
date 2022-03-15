@@ -3,8 +3,8 @@ import "./AppBar.scss";
 
 const AppBar = () => {
   return (
-    <div>
-      <h1>📚shelfLife</h1>
+    <div className="appbar">
+      <h3>📚shelfLife</h3>
     </div>
   );
 };
