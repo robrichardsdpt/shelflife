@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ThemedButton from "../../components/button/ThemedButton";
 import { auth, sendPasswordReset } from "../../firebase";
+import Logo from "../../components/logo/Logo";
 
 function Reset() {
   const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ function Reset() {
   return (
     <div className="auth">
       <div className="auth__container">
-        <h1>📚shelfLife</h1>
+        <Logo />
         <h2 className="auth__header">Reset your password:</h2>
         <input
           type="text"

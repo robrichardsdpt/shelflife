@@ -7,6 +7,7 @@ import {
 } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import ThemedButton from "../../components/button/ThemedButton";
+import Logo from "../../components/logo/Logo";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -25,7 +26,7 @@ function Login() {
   return (
     <div className="auth">
       <div className="auth__container">
-        <h1>📚shelfLife</h1>
+        <Logo />
         <h2 className="auth__header">Login as existing user:</h2>
         <input
           type="text"
