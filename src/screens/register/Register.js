@@ -30,7 +30,7 @@ const Register = () => {
     <div className="auth">
       <div className="auth__container">
         <Logo />
-        <h2 className="auth__header">Register a new user:</h2>
+        <h3 className="auth__header">Register a new user:</h3>
         <input
           type="text"
           className="auth__textBox"
@@ -62,7 +62,7 @@ const Register = () => {
           message={"Register with Google"}
           handleClick={signInWithGoogle}
         />
-        <div>
+        <div className="auth__message">
           Already have an account? <Link to="/">Login</Link> now.
         </div>
       </div>

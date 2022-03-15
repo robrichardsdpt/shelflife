@@ -20,7 +20,7 @@ const Reset = () => {
     <div className="auth">
       <div className="auth__container">
         <Logo />
-        <h2 className="auth__header">Reset your password:</h2>
+        <h3 className="auth__header">Reset your password:</h3>
         <input
           type="text"
           className="auth__textBox"
@@ -33,7 +33,7 @@ const Reset = () => {
           handleClick={() => sendPasswordReset(email)}
           message={"Send password reset email"}
         />
-        <div>
+        <div className="auth__message">
           Don't have an account? <Link to="/register">Register</Link> now.
         </div>
       </div>

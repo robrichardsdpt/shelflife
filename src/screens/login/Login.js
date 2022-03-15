@@ -27,7 +27,7 @@ const Login = () => {
     <div className="auth">
       <div className="auth__container">
         <Logo />
-        <h2 className="auth__header">Login as existing user:</h2>
+        <h3 className="auth__header">Login as existing user:</h3>
         <input
           type="text"
           className="auth__textBox"
@@ -52,10 +52,10 @@ const Login = () => {
           colorTheme={"secondary"}
           handleClick={signInWithGoogle}
         />
-        <div>
+        <div className="auth__message">
           <Link to="/reset">Forgot Password</Link>
         </div>
-        <div>
+        <div className="auth__message">
           Don't have an account? <Link to="/register">Register</Link> now.
         </div>
       </div>
