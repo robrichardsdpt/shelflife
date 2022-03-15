@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./Login";
-import Register from "./Register";
-import Reset from "./Reset";
-import Dashboard from "./Dashboard";
+import Login from "./screens/login/Login";
+import Register from "./screens/register/Register";
+import Reset from "./screens/resetPassword/Reset";
+import Dashboard from "./screens/dashboard/Dashboard";
 
 function App() {
   return (

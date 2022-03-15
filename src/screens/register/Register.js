@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
-import ThemedButton from "./components/button/ThemedButton";
+import ThemedButton from "../../components/button/ThemedButton";
 import {
   auth,
   registerWithEmailAndPassword,
   signInWithGoogle,
-} from "./firebase";
+} from "../../firebase";
 
 function Register() {
   const [email, setEmail] = useState("");

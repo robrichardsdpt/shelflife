@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import ThemedButton from "./components/button/ThemedButton";
-import { auth, sendPasswordReset } from "./firebase";
+import ThemedButton from "../../components/button/ThemedButton";
+import { auth, sendPasswordReset } from "../../firebase";
 
 function Reset() {
   const [email, setEmail] = useState("");
