@@ -5,7 +5,7 @@ import Register from "./screens/register/Register";
 import Reset from "./screens/resetPassword/Reset";
 import Dashboard from "./screens/dashboard/Dashboard";
 
-function App() {
+const App = () => {
   return (
     <div className="app">
       <Router>
@@ -18,6 +18,6 @@ function App() {
       </Router>
     </div>
   );
-}
+};
 
 export default App;

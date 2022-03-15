@@ -9,7 +9,7 @@ import {
 } from "../../firebase";
 import Logo from "../../components/logo/Logo";
 
-function Register() {
+const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -68,6 +68,6 @@ function Register() {
       </div>
     </div>
   );
-}
+};
 
 export default Register;

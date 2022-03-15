@@ -9,7 +9,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import ThemedButton from "../../components/button/ThemedButton";
 import Logo from "../../components/logo/Logo";
 
-function Login() {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
@@ -61,6 +61,6 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
 export default Login;

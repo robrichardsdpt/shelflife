@@ -6,7 +6,7 @@ import ThemedButton from "../../components/button/ThemedButton";
 import { auth, sendPasswordReset } from "../../firebase";
 import Logo from "../../components/logo/Logo";
 
-function Reset() {
+const Reset = () => {
   const [email, setEmail] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
@@ -39,6 +39,6 @@ function Reset() {
       </div>
     </div>
   );
-}
+};
 
 export default Reset;
