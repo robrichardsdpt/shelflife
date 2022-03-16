@@ -8,6 +8,7 @@ import {
   signInWithGoogle,
 } from "../../firebase";
 import Logo from "../../components/logo/Logo";
+import Headline from "../../components/headline/Headline";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -30,7 +31,7 @@ const Register = () => {
     <div className="auth">
       <div className="auth__container">
         <Logo />
-        <h3 className="auth__header">Register a new user:</h3>
+        <Headline message="Register a new user:" />
         <input
           type="text"
           className="auth__textBox"

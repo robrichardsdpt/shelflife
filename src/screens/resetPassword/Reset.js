@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import ThemedButton from "../../components/button/ThemedButton";
 import { auth, sendPasswordReset } from "../../firebase";
 import Logo from "../../components/logo/Logo";
+import Headline from "../../components/headline/Headline";
 
 const Reset = () => {
   const [email, setEmail] = useState("");
@@ -20,7 +21,7 @@ const Reset = () => {
     <div className="auth">
       <div className="auth__container">
         <Logo />
-        <h3 className="auth__header">Reset your password:</h3>
+        <Headline message="Reset your password:" />
         <input
           type="text"
           className="auth__textBox"

@@ -6,6 +6,7 @@ import {
   signInWithGoogle,
 } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Headline from "../../components/headline/Headline";
 import ThemedButton from "../../components/button/ThemedButton";
 import Logo from "../../components/logo/Logo";
 
@@ -27,7 +28,7 @@ const Login = () => {
     <div className="auth">
       <div className="auth__container">
         <Logo />
-        <h3 className="auth__header">Login as existing user:</h3>
+        <Headline message="Login as existing user:" />
         <input
           type="text"
           className="auth__textBox"
