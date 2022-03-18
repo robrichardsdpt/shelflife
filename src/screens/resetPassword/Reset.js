@@ -6,6 +6,7 @@ import ThemedButton from "../../components/button/ThemedButton";
 import { auth, sendPasswordReset } from "../../firebase";
 import Logo from "../../components/logo/Logo";
 import Headline from "../../components/headline/Headline";
+import TextInput from "../../__tests__/components/textInput/TextInput";
 
 const Reset = () => {
   const [email, setEmail] = useState("");
@@ -22,11 +23,11 @@ const Reset = () => {
       <div className="auth__container">
         <Logo />
         <Headline message="Reset your password:" />
-        <input
-          type="text"
+        <TextInput
+          inputType="text"
           className="auth__textBox"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          handleChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
         <ThemedButton

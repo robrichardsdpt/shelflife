@@ -9,6 +9,7 @@ import {
 } from "../../firebase";
 import Logo from "../../components/logo/Logo";
 import Headline from "../../components/headline/Headline";
+import TextInput from "../../__tests__/components/textInput/TextInput";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -32,25 +33,25 @@ const Register = () => {
       <div className="auth__container">
         <Logo />
         <Headline message="Register a new user:" />
-        <input
-          type="text"
+        <TextInput
+          inputType="text"
           className="auth__textBox"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          handleChange={(e) => setName(e.target.value)}
           placeholder="Full Name"
         />
-        <input
-          type="text"
+        <TextInput
+          inputType="text"
           className="auth__textBox"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          handleChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
-        <input
-          type="password"
+        <TextInput
+          inputType="password"
           className="auth__textBox"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          handleChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
         <ThemedButton

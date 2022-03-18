@@ -9,6 +9,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Headline from "../../components/headline/Headline";
 import ThemedButton from "../../components/button/ThemedButton";
 import Logo from "../../components/logo/Logo";
+import TextInput from "../../__tests__/components/textInput/TextInput";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -29,18 +30,18 @@ const Login = () => {
       <div className="auth__container">
         <Logo />
         <Headline message="Login as existing user:" />
-        <input
-          type="text"
+        <TextInput
+          inputType="text"
           className="auth__textBox"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          handleChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
-        <input
-          type="password"
+        <TextInput
+          inputType="password"
           className="auth__textBox"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          handleChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
         <ThemedButton
