@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -6,7 +6,7 @@ import ThemedButton from "../../components/button/ThemedButton";
 import { auth, sendPasswordReset } from "../../firebase";
 import Logo from "../../components/logo/Logo";
 import Headline from "../../components/headline/Headline";
-import TextInput from "../../__tests__/components/textInput/TextInput";
+import TextInput from "../../components/textInput/TextInput";
 
 const Reset = () => {
   const [email, setEmail] = useState("");
@@ -26,8 +26,10 @@ const Reset = () => {
         <TextInput
           inputType="text"
           className="auth__textBox"
-          value={email}
-          handleChange={(e) => setEmail(e.target.value)}
+          valueString={email}
+          handleChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setEmail(e.target.value)
+          }
           placeholder="E-mail Address"
         />
         <ThemedButton

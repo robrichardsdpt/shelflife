@@ -60,7 +60,7 @@ const signInWithGoogle = async () => {
   }
 };
 
-const logInWithEmailAndPassword = async (email, password) => {
+const logInWithEmailAndPassword = async (email: string, password: string) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (err) {
@@ -69,7 +69,11 @@ const logInWithEmailAndPassword = async (email, password) => {
   }
 };
 
-const registerWithEmailAndPassword = async (name, email, password) => {
+const registerWithEmailAndPassword = async (
+  name: string,
+  email: string,
+  password: string
+) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
@@ -85,7 +89,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
   }
 };
 
-const sendPasswordReset = async (email) => {
+const sendPasswordReset = async (email: string) => {
   try {
     await sendPasswordResetEmail(auth, email);
     alert("Password reset link sent!");
