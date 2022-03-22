@@ -1,7 +1,17 @@
 import React from "react";
 import "./ThemedButton.scss";
 
-const ThemedButton = ({ message, colorTheme, handleClick }) => {
+type ThemedButtonProps = {
+  message: string;
+  handleClick: React.MouseEventHandler<HTMLButtonElement>;
+  colorTheme: string;
+};
+
+const ThemedButton = ({
+  message,
+  colorTheme,
+  handleClick,
+}: ThemedButtonProps) => {
   const className = `${colorTheme}__btn`;
   return (
     <button className={className} onClick={handleClick}>
