@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from "react";
+import { ChangeEventHandler } from "react";
 
 type TextInputProps = {
   inputType: string;
@@ -6,6 +6,7 @@ type TextInputProps = {
   valueString: string;
   handleChange: ChangeEventHandler<HTMLInputElement>;
   placeholder: string;
+  errorState?: Error;
 };
 
 const TextInput = ({
@@ -14,7 +15,9 @@ const TextInput = ({
   valueString,
   handleChange,
   placeholder,
+  errorState,
 }: TextInputProps) => {
+  console.log(errorState);
   return (
     <input
       type={inputType}

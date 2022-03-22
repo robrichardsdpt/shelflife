@@ -1,5 +1,3 @@
-import React from "react";
-
 type HeadlineProps = {
   message: string;
 };

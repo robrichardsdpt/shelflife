@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   auth,
@@ -38,6 +38,7 @@ const Login = () => {
             setEmail(e.target.value)
           }
           placeholder="E-mail Address"
+          errorState={error}
         />
         <TextInput
           inputType="password"
