@@ -6,7 +6,6 @@ type TextInputProps = {
   valueString: string;
   handleChange: ChangeEventHandler<HTMLInputElement>;
   placeholder: string;
-  errorState?: Error;
 };
 
 const TextInput = ({
@@ -15,7 +14,6 @@ const TextInput = ({
   valueString,
   handleChange,
   placeholder,
-  errorState,
 }: TextInputProps) => {
   return (
     <input

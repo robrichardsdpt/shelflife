@@ -12,11 +12,13 @@ const Reset = () => {
   const [email, setEmail] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+  const authInputClassName =
+    error === undefined ? "auth__textBox" : "auth__textBox-error";
 
   useEffect(() => {
     if (loading) return;
     if (user) navigate("/dashboard");
-  }, [user, loading]);
+  }, [user, loading, navigate]);
 
   return (
     <div className="auth">
@@ -25,7 +27,7 @@ const Reset = () => {
         <Headline message="Reset your password:" />
         <TextInput
           inputType="text"
-          className="auth__textBox"
+          className={authInputClassName}
           valueString={email}
           handleChange={(e: ChangeEvent<HTMLInputElement>) =>
             setEmail(e.target.value)

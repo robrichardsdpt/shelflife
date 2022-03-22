@@ -29,7 +29,7 @@ const Dashboard = () => {
     if (!user) return navigate("/");
 
     fetchUserName();
-  }, [user, loading]);
+  }, [user, loading, navigate]);
 
   return (
     <div className="dashboard">

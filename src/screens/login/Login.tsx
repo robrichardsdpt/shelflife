@@ -16,7 +16,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
-
+  const authInputClassName =
+    error === undefined ? "auth__textBox" : "auth__textBox-error";
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
@@ -32,17 +33,16 @@ const Login = () => {
         <Headline message="Login as existing user:" />
         <TextInput
           inputType="text"
-          className="auth__textBox"
+          className={authInputClassName}
           valueString={email}
           handleChange={(e: ChangeEvent<HTMLInputElement>) =>
             setEmail(e.target.value)
           }
           placeholder="E-mail Address"
-          errorState={error}
         />
         <TextInput
           inputType="password"
-          className="auth__textBox"
+          className={authInputClassName}
           valueString={password}
           handleChange={(e: ChangeEvent<HTMLInputElement>) =>
             setPassword(e.target.value)

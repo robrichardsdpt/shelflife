@@ -17,6 +17,8 @@ const Register = () => {
   const [name, setName] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+  const authInputClassName =
+    error === undefined ? "auth__textBox" : "auth__textBox-error";
 
   const register = () => {
     if (!name) alert("Please enter name");
@@ -26,7 +28,7 @@ const Register = () => {
   useEffect(() => {
     if (loading) return;
     if (user) navigate("/dashboard");
-  }, [user, loading]);
+  }, [user, loading, navigate]);
 
   return (
     <div className="auth">
@@ -35,7 +37,7 @@ const Register = () => {
         <Headline message="Register a new user:" />
         <TextInput
           inputType="text"
-          className="auth__textBox"
+          className={authInputClassName}
           valueString={name}
           handleChange={(e: ChangeEvent<HTMLInputElement>) =>
             setName(e.target.value)
@@ -44,7 +46,7 @@ const Register = () => {
         />
         <TextInput
           inputType="text"
-          className="auth__textBox"
+          className={authInputClassName}
           valueString={email}
           handleChange={(e: ChangeEvent<HTMLInputElement>) =>
             setEmail(e.target.value)
@@ -53,7 +55,7 @@ const Register = () => {
         />
         <TextInput
           inputType="password"
-          className="auth__textBox"
+          className={authInputClassName}
           valueString={password}
           handleChange={(e: ChangeEvent<HTMLInputElement>) =>
             setPassword(e.target.value)
