@@ -1,8 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import App from "./App";
 
-test("renders logo Text from login component", () => {
+test("renders logo Text from login component", async () => {
   render(<App />);
   const linkElement = screen.getByText(/📚shelfLife/i);
-  expect(linkElement).toBeInTheDocument();
+  await waitFor(() => expect(linkElement).toBeInTheDocument());
 });

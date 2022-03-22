@@ -17,7 +17,6 @@ const TextInput = ({
   placeholder,
   errorState,
 }: TextInputProps) => {
-  console.log(errorState);
   return (
     <input
       type={inputType}

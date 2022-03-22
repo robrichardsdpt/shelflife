@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Register from "../../../screens/register/Register";
 
@@ -10,12 +10,12 @@ jest.mock("react-router-dom", () => ({
   }),
 }));
 
-test("renders header text", () => {
+test("renders header text", async () => {
   render(
     <BrowserRouter>
       <Register />
     </BrowserRouter>
   );
   const logoElement = screen.getByText(/📚shelfLife/i);
-  expect(logoElement).toBeInTheDocument();
+  await waitFor(() => expect(logoElement).toBeInTheDocument());
 });
