@@ -12,5 +12,5 @@ test("renders header text", () => {
   const buttonText = screen.getByText(/Submit/i);
   const button = screen.getByRole("button");
   expect(buttonText).toBeInTheDocument();
-  expect(button).toHaveClass("primary__btn");
+  expect(button).HaveClass("primary__btn");
 });

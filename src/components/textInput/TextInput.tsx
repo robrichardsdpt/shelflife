@@ -1,4 +1,5 @@
 import { ChangeEventHandler } from "react";
+import "./TextInput.scss";
 
 type TextInputProps = {
   inputType: string;
@@ -16,13 +17,17 @@ const TextInput = ({
   placeholder,
 }: TextInputProps) => {
   return (
-    <input
-      type={inputType}
-      className={className}
-      value={valueString}
-      onChange={handleChange}
-      placeholder={placeholder}
-    />
+    <div className={"input-container"}>
+      <label className={`${valueString !== "" ? " filled" : ""}`}>
+        {placeholder}
+      </label>
+      <input
+        type={inputType}
+        className={className}
+        value={valueString}
+        onChange={handleChange}
+      />
+    </div>
   );
 };
 
