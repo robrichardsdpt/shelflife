@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background-color: whitesmoke;
   div {
     margin-top: 7px;
   }
@@ -19,6 +19,7 @@
   flex-direction: column;
   text-align: center;
   background-color: #fffef0;
+  border: 0.5px solid darkolivegreen;
   border-radius: 5px;
   padding: 25px;
 }
