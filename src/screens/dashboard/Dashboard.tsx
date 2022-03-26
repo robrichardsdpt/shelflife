@@ -5,6 +5,8 @@ import "./Dashboard.scss";
 import { auth, db, logout } from "../../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import ThemedButton from "../../components/button/ThemedButton";
+import Logo from "../../components/logo/Logo";
+import LoggedInAs from "../../components/loggedInAs/LoggedInAs";
 
 const Dashboard = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -34,9 +36,8 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="dashboard__container">
-        Logged in as
-        <div>{name}</div>
-        <div>{user?.email}</div>
+        <Logo />
+        <LoggedInAs email={user.email} name={name} />
         <ThemedButton
           colorTheme={"primary"}
           handleClick={logout}
