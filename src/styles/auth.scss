@@ -30,7 +30,12 @@
 
 .auth__link {
   color: #4285f4;
-  &:active {
+
+  &:hover {
     color: steelblue;
+  }
+
+  &:active {
+    color: lightsteelblue;
   }
 }
