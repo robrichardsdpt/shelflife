@@ -4,6 +4,7 @@ import Login from "./screens/login/Login";
 import Register from "./screens/register/Register";
 import Reset from "./screens/resetPassword/Reset";
 import Dashboard from "./screens/dashboard/Dashboard";
+import LoggedOut from "./screens/loggedOut/LoggedOut";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Reset />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/loggedOut" element={<LoggedOut />} />
         </Routes>
       </Router>
     </div>

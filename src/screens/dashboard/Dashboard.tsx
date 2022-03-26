@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.scss";
@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [name, setName] = useState("");
   const navigate = useNavigate();
 
-  const fetchUserName = async () => {
+  const fetchUserName = useCallback(async () => {
     try {
       const q = query(collection(db, "users"), where("uid", "==", user?.uid));
       const doc = await getDocs(q);
@@ -24,15 +24,16 @@ const Dashboard = () => {
       console.error(err);
       alert("An error occured while fetching user data");
     }
-  };
+  }, [user?.uid]);
 
   useEffect(() => {
     if (loading) return;
-    if (!user) return navigate("/");
+    if (!user) return navigate("/loggedOut");
 
     fetchUserName();
-  }, [user, loading, navigate]);
+  }, [user, loading, navigate, fetchUserName]);
 
+  if (error) console.error(error);
   return (
     <div className="dashboard">
       <div className="dashboard__container">
@@ -40,7 +41,10 @@ const Dashboard = () => {
         <LoggedInAs email={user.email} name={name} />
         <ThemedButton
           colorTheme={"primary"}
-          handleClick={logout}
+          handleClick={() => {
+            logout();
+            return navigate("/loggedOut");
+          }}
           message={"Logout"}
         />
       </div>
