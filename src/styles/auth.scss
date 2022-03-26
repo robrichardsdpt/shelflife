@@ -27,3 +27,10 @@
 .auth__textBox-error {
   border-color: red;
 }
+
+.auth__link {
+  color: #4285f4;
+  &:active {
+    color: steelblue;
+  }
+}

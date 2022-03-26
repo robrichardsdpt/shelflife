@@ -73,7 +73,11 @@ const Register = () => {
           handleClick={signInWithGoogle}
         />
         <div className="auth__message">
-          Already have an account? <Link to="/">Login</Link> now.
+          Already have an account?{" "}
+          <Link className="auth__link" to="/">
+            Login
+          </Link>{" "}
+          now.
         </div>
       </div>
     </div>

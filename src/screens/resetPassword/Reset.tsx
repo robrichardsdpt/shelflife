@@ -40,7 +40,11 @@ const Reset = () => {
           message={"Send password reset email"}
         />
         <div className="auth__message">
-          Don't have an account? <Link to="/register">Register</Link> now.
+          Don't have an account?{" "}
+          <Link className="auth__link" to="/register">
+            Register
+          </Link>{" "}
+          now.
         </div>
       </div>
     </div>
