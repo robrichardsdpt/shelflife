@@ -5,7 +5,6 @@ import "./Dashboard.scss";
 import { auth, db, logout } from "../../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import ThemedButton from "../../components/button/ThemedButton";
-import Logo from "../../components/logo/Logo";
 import LoggedInAs from "../../components/loggedInAs/LoggedInAs";
 import AppBar from "../../components/appBar/AppBar";
 
