@@ -10,8 +10,10 @@ import Headline from "../../components/headline/Headline";
 import ThemedButton from "../../components/button/ThemedButton";
 import Logo from "../../components/logo/Logo";
 import TextInput from "../../components/textInput/TextInput";
+import Loading from "../loading/Loading";
 
 const Login = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
@@ -20,13 +22,15 @@ const Login = () => {
     error === undefined ? "auth__textBox" : "auth__textBox-error";
   useEffect(() => {
     if (loading) {
-      // maybe trigger a loading screen
-      return;
+      return setIsLoading(true);
     }
     if (user) navigate("/dashboard");
+    if (!loading) {
+      return setIsLoading(false);
+    }
   }, [user, loading, navigate]);
 
-  return (
+  return !isLoading ? (
     <div className="auth">
       <div className="auth__container">
         <Logo />
@@ -73,6 +77,8 @@ const Login = () => {
         </div>
       </div>
     </div>
+  ) : (
+    <Loading />
   );
 };
 
