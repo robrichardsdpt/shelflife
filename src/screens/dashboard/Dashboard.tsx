@@ -7,6 +7,7 @@ import { query, collection, getDocs, where } from "firebase/firestore";
 import ThemedButton from "../../components/button/ThemedButton";
 import Logo from "../../components/logo/Logo";
 import LoggedInAs from "../../components/loggedInAs/LoggedInAs";
+import AppBar from "../../components/appBar/AppBar";
 
 const Dashboard = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -35,20 +36,22 @@ const Dashboard = () => {
 
   if (error) console.error(error);
   return (
-    <div className="dashboard">
-      <div className="dashboard__container">
-        <Logo />
-        <LoggedInAs email={user.email} name={name} />
-        <ThemedButton
-          colorTheme={"primary"}
-          handleClick={() => {
-            logout();
-            return navigate("/loggedOut");
-          }}
-          message={"Logout"}
-        />
+    <>
+      <AppBar />
+      <div className="dashboard">
+        <div className="dashboard__container">
+          <LoggedInAs email={user.email} name={name} />
+          <ThemedButton
+            colorTheme={"primary"}
+            handleClick={() => {
+              logout();
+              return navigate("/loggedOut");
+            }}
+            message={"Logout"}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
