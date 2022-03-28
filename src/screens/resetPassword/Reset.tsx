@@ -7,8 +7,10 @@ import { auth, sendPasswordReset } from "../../firebase";
 import Logo from "../../components/logo/Logo";
 import Headline from "../../components/headline/Headline";
 import TextInput from "../../components/textInput/TextInput";
+import Loading from "../loading/Loading";
 
 const Reset = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
@@ -16,11 +18,12 @@ const Reset = () => {
     error === undefined ? "auth__textBox" : "auth__textBox-error";
 
   useEffect(() => {
-    if (loading) return;
+    if (loading) return setIsLoading(true);
     if (user) navigate("/dashboard");
+    if (!loading) return setIsLoading(false);
   }, [user, loading, navigate]);
 
-  return (
+  return !isLoading ? (
     <div className="auth">
       <div className="auth__container">
         <Logo />
@@ -48,6 +51,8 @@ const Reset = () => {
         </div>
       </div>
     </div>
+  ) : (
+    <Loading />
   );
 };
 

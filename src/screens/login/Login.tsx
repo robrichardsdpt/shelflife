@@ -21,13 +21,9 @@ const Login = () => {
   const authInputClassName =
     error === undefined ? "auth__textBox" : "auth__textBox-error";
   useEffect(() => {
-    if (loading) {
-      return setIsLoading(true);
-    }
+    if (loading) return setIsLoading(true);
     if (user) navigate("/dashboard");
-    if (!loading) {
-      return setIsLoading(false);
-    }
+    if (!loading) return setIsLoading(false);
   }, [user, loading, navigate]);
 
   return !isLoading ? (

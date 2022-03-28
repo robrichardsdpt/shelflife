@@ -10,8 +10,10 @@ import {
 import Logo from "../../components/logo/Logo";
 import Headline from "../../components/headline/Headline";
 import TextInput from "../../components/textInput/TextInput";
+import Loading from "../loading/Loading";
 
 const Register = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -26,11 +28,12 @@ const Register = () => {
   };
 
   useEffect(() => {
-    if (loading) return;
+    if (loading) return setIsLoading(true);
     if (user) navigate("/dashboard");
+    if (!loading) return setIsLoading(false);
   }, [user, loading, navigate]);
 
-  return (
+  return !isLoading ? (
     <div className="auth">
       <div className="auth__container">
         <Logo />
@@ -81,6 +84,8 @@ const Register = () => {
         </div>
       </div>
     </div>
+  ) : (
+    <Loading />
   );
 };
 
